@@ -5,8 +5,10 @@
 
 <div class="container mt-3">
   <div class="cards">
-    <% @cocktail.doses.each do |ingredients| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
-        <%= dose.name %>
+    <% @cocktail.doses.each do |dose| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% %>)">
+        <%= dose.description %> <%= dose.ingredient.name %>
       </div>
+         <%= link_to "Delete dose", dose_path(dose), method: :delete, class: "btn btn-primary" %>
+
     <% end %>
